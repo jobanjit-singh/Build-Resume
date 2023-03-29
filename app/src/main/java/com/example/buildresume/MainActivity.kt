@@ -9,6 +9,7 @@ import android.graphics.pdf.PdfDocument.Page
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.content.Intent
 import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
@@ -39,25 +40,27 @@ class MainActivity : AppCompatActivity() {
     }
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     fun createpdf(){
-        var con:ConstraintLayout = findViewById(R.id.cons)
-        val document = PdfDocument()
-        val pageInfo = PdfDocument.PageInfo.Builder(con.width,con.height,1).create()
-        val page = document.startPage(pageInfo)
-        val canvas = page.canvas
-        con.draw(canvas)
-        document.finishPage(page)
-        var directory = Environment.getExternalStorageDirectory().path+"/mypdf/"
-        val file = File(directory)
-        if(!file.exists()){
-            file.mkdirs()
-        }
-        var target = directory+"file_1.pdf"
-        var filepath = File(target)
-        try{
-            document.writeTo(FileOutputStream(filepath))
-            Toast.makeText(this,"Saved",Toast.LENGTH_LONG).show()
-        }catch (e:IOException){
-            Toast.makeText(this,"Error",Toast.LENGTH_LONG).show()
-        }
+        var i = Intent(this,DetailActivity::class.java)
+        startActivity(i)
+//        var con:ConstraintLayout = findViewById(R.id.cons)
+//        val document = PdfDocument()
+//        val pageInfo = PdfDocument.PageInfo.Builder(con.width,con.height,1).create()
+//        val page = document.startPage(pageInfo)
+//        val canvas = page.canvas
+//        con.draw(canvas)
+//        document.finishPage(page)
+//        var directory = Environment.getExternalStorageDirectory().path+"/mypdf/"
+//        val file = File(directory)
+//        if(!file.exists()){
+//            file.mkdirs()
+//        }
+//        var target = directory+"file_1.pdf"
+//        var filepath = File(target)
+//        try{
+//            document.writeTo(FileOutputStream(filepath))
+//            Toast.makeText(this,"Saved",Toast.LENGTH_LONG).show()
+//        }catch (e:IOException){
+//            Toast.makeText(this,"Error",Toast.LENGTH_LONG).show()
+//        }
     }
 }
