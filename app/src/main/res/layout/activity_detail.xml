@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/BaseCardView"
+            android:id="@+id/PersonalBaseCardView"
             app:cardCornerRadius="10dp"
             app:cardElevation="5dp"
             app:cardUseCompatPadding="true"
@@ -23,12 +23,12 @@
             android:layout_height="wrap_content">
 
             <RelativeLayout
-                android:id="@+id/baseLayout"
+                android:id="@+id/personalbaseLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <RelativeLayout
-                    android:id="@+id/showLayout"
+                    android:id="@+id/personalshowLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -47,25 +47,33 @@
                         android:textSize="15sp" />
 
                     <ImageButton
-                        android:id="@+id/arrowButton"
-                        android:layout_centerVertical="true"
+                        android:id="@+id/personalarrowButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:layout_margin="5dp"
-                        android:src="@drawable/expand_more" />
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/expand_more"
+                        android:backgroundTintMode="screen"/>
 
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/hideLayout"
+                    android:id="@+id/personalHideLayout"
                     android:visibility="gone"
-                    android:layout_below="@id/showLayout"
+                    android:layout_below="@id/personalshowLayout"
+                    android:background="@drawable/hidelayoutback"
+                    android:layout_margin="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <EditText
-                        android:id="@+id/NameEditText"
+                        android:id="@+id/personalNameEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
@@ -79,10 +87,10 @@
                         android:hint="Name" />
 
                     <EditText
-                        android:id="@+id/attributeEditText"
+                        android:id="@+id/personalattributeEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/NameEditText"
+                        android:layout_below="@id/personalNameEditText"
                         android:layout_marginStart="5dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
@@ -94,10 +102,10 @@
                         android:hint="Attribute (eg.Student,etc..)" />
 
                     <EditText
-                        android:id="@+id/contactEditText"
+                        android:id="@+id/personalcontactEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/attributeEditText"
+                        android:layout_below="@id/personalattributeEditText"
                         android:layout_marginStart="5dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
@@ -110,30 +118,30 @@
                         android:hint="Contact No." />
 
                     <EditText
-                        android:id="@+id/emailEditText"
+                        android:id="@+id/personalemailEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/contactEditText"
+                        android:layout_below="@id/personalcontactEditText"
                         android:layout_margin="5dp"
                         android:backgroundTint="@color/mainColor"
                         android:textCursorDrawable="@drawable/cursor_color"
                         android:hint="Email Id"/>
 
                     <EditText
-                        android:id="@+id/githubEditText"
+                        android:id="@+id/personalgithubEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/emailEditText"
+                        android:layout_below="@id/personalemailEditText"
                         android:layout_margin="5dp"
                         android:backgroundTint="@color/mainColor"
                         android:textCursorDrawable="@drawable/cursor_color"
                         android:hint="GitHub"/>
 
                     <EditText
-                        android:id="@+id/linkedinEditText"
+                        android:id="@+id/personallinkedinEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/githubEditText"
+                        android:layout_below="@id/personalgithubEditText"
                         android:layout_margin="5dp"
                         android:backgroundTint="@color/mainColor"
                         android:textCursorDrawable="@drawable/cursor_color"
@@ -144,5 +152,203 @@
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/EducationCardView"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintTop_toBottomOf="@id/PersonalBaseCardView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/educationBaseLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/educationtxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="Education"
+                        android:layout_centerVertical="true"
+                        android:textSize="15sp"/>
+
+                    <ImageButton
+                        android:id="@+id/educationArrowButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/expand_more"
+                        android:backgroundTintMode="screen"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/educationHideLayout"
+                    android:layout_below="@id/educationBaseLayout"
+                    android:visibility="gone"
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/educationGraduation"
+                        android:background="@drawable/hidelayoutback"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/educationGraduationtxt"
+                            android:layout_margin="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UG/PG"
+                            android:textSize="15sp"/>
+
+                        <EditText
+                            android:id="@+id/educationGraduationOrganizationName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/educationGraduationtxt"
+                            android:layout_margin="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:hint="Organization Name"
+                            android:backgroundTint="@color/mainColor"
+                            android:textCursorDrawable="@drawable/cursor_color" />
+
+                        <EditText
+                            android:id="@+id/educationGraduationCourseName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/educationGraduationOrganizationName"
+                            android:layout_margin="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:hint="Course Name"
+                            android:backgroundTint="@color/mainColor"
+                            android:textCursorDrawable="@drawable/cursor_color" />
+
+                        <EditText
+                            android:id="@+id/educationGraduationMarks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/educationGraduationCourseName"
+                            android:layout_margin="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:hint="Marks"
+                            android:backgroundTint="@color/mainColor"
+                            android:textCursorDrawable="@drawable/cursor_color" />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/educationSenSec"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@id/educationGraduation"
+                        android:background="@drawable/hidelayoutback"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/educationSenSectxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Senior Secondary"
+                            android:textSize="15sp"/>
+
+                        <EditText
+                            android:id="@+id/educationSenSecOrganizationName"
+                            android:layout_below="@id/educationSenSectxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/mainColor"
+                            android:textCursorDrawable="@drawable/cursor_color"
+                            android:hint="Organization Name"
+                            android:layout_margin="5dp"/>
+
+                        <EditText
+                            android:id="@+id/educationSenSecMarks"
+                            android:layout_below="@id/educationSenSecOrganizationName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/mainColor"
+                            android:textCursorDrawable="@drawable/cursor_color"
+                            android:hint="Marks"
+                            android:layout_margin="5dp"/>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/educationMatric"
+                        android:background="@drawable/hidelayoutback"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@id/educationSenSec"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/educationMatrictxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:textSize="15sp"
+                            android:text="Matriculation"/>
+
+                        <EditText
+                            android:id="@+id/educationMatricOrganizationName"
+                            android:layout_below="@id/educationMatrictxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/mainColor"
+                            android:textCursorDrawable="@drawable/cursor_color"
+                            android:hint="Organization Name"
+                            android:layout_margin="5dp"/>
+
+                        <EditText
+                            android:id="@+id/educationMatricMarks"
+                            android:layout_below="@id/educationMatricOrganizationName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/mainColor"
+                            android:textCursorDrawable="@drawable/cursor_color"
+                            android:hint="Marks"
+                            android:layout_margin="5dp"/>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

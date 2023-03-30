@@ -1,5 +1,6 @@
 package com.example.buildresume
 
+import android.annotation.SuppressLint
 import android.opengl.Visibility
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -14,26 +15,45 @@ import androidx.annotation.RequiresApi
 import androidx.cardview.widget.CardView
 
 class DetailActivity : AppCompatActivity() {
-    lateinit var baseCardView:CardView
-    lateinit var arrowButton:ImageButton
-    lateinit var hidelayout:RelativeLayout
+    lateinit var personalbaseCardView:CardView
+    lateinit var personalarrowButton:ImageButton
+    lateinit var personalhidelayout:RelativeLayout
+    lateinit var educationbaseCardView:CardView
+    lateinit var educationarrowButton:ImageButton
+    lateinit var educationhidelayout:RelativeLayout
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
-        baseCardView = findViewById(R.id.BaseCardView)
-        arrowButton = findViewById(R.id.arrowButton)
-        hidelayout = findViewById(R.id.hideLayout)
+        personalbaseCardView = findViewById(R.id.PersonalBaseCardView)
+        personalarrowButton = findViewById(R.id.personalarrowButton)
+        personalhidelayout = findViewById(R.id.personalHideLayout)
 
-        arrowButton.setOnClickListener(View.OnClickListener {
-            if(hidelayout.visibility == View.VISIBLE){
-                TransitionManager.beginDelayedTransition(baseCardView,AutoTransition())
-                hidelayout.visibility = View.GONE
-                arrowButton.setImageResource(R.drawable.expand_more)
+        educationbaseCardView = findViewById(R.id.EducationCardView)
+        educationarrowButton = findViewById(R.id.educationArrowButton)
+        educationhidelayout = findViewById(R.id.educationHideLayout)
+
+        personalarrowButton.setOnClickListener(View.OnClickListener {
+            if(personalhidelayout.visibility == View.VISIBLE){
+                TransitionManager.beginDelayedTransition(personalbaseCardView,AutoTransition())
+                personalarrowButton.setImageResource(R.drawable.expand_more)
+                personalhidelayout.visibility = View.GONE
             }else{
-                TransitionManager.beginDelayedTransition(baseCardView,AutoTransition())
-                hidelayout.visibility = View.VISIBLE
-                arrowButton.setImageResource(R.drawable.expand_less)
+                TransitionManager.beginDelayedTransition(personalbaseCardView,AutoTransition())
+                personalarrowButton.setImageResource(R.drawable.expand_less)
+                personalhidelayout.visibility = View.VISIBLE
+            }
+        })
+
+        educationarrowButton.setOnClickListener(View.OnClickListener {
+            if(educationhidelayout.visibility == View.GONE){
+                TransitionManager.beginDelayedTransition(educationbaseCardView,AutoTransition())
+                educationarrowButton.setImageResource(R.drawable.expand_less)
+                educationhidelayout.visibility = View.VISIBLE
+            }else{
+                TransitionManager.beginDelayedTransition(educationbaseCardView,AutoTransition())
+                educationarrowButton.setImageResource(R.drawable.expand_more)
+                educationhidelayout.visibility = View.GONE
             }
         })
     }
