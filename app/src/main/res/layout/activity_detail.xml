@@ -349,6 +349,196 @@
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/experienceCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/EducationCardView">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/experienceShowLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="Experience"
+                        android:textSize="15sp"
+                        android:layout_centerVertical="true"/>
+
+                    <ImageButton
+                        android:id="@+id/experienceArrowButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:backgroundTintMode="screen"
+                        android:src="@drawable/expand_more" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/experienceHideLayout"
+                    android:visibility="gone"
+                    android:layout_below="@id/experienceShowLayout"
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/experienceHideLayoutEx1"
+                        android:background="@drawable/hidelayoutback"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:text="Ist Experience"
+                            android:layout_margin="5dp"/>
+
+                        <EditText
+                            android:id="@+id/experienceHideLayoutEx1NameofExpe"
+                            android:hint="Experience (Training,Internship,etc)"
+                            android:backgroundTint="@color/mainColor"
+                            android:textCursorDrawable="@drawable/cursor_color"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"/>
+
+                        <EditText
+                            android:id="@+id/experienceHideLayoutEx1OrganizationName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:hint="Organization Name"
+                            android:backgroundTint="@color/mainColor"
+                            android:textCursorDrawable="@drawable/cursor_color"
+                            />
+                        <EditText
+                            android:id="@+id/experienceHideLayoutEx1Achievement"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:hint="Achievement/Tasks"
+                            android:backgroundTint="@color/mainColor"
+                            android:textCursorDrawable="@drawable/cursor_color"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/experienceHideLayoutEx2"
+                        android:layout_below="@id/experienceHideLayoutEx1"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/hidelayoutback"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:text="2nd Experience"
+                            android:layout_margin="5dp"/>
+
+                        <EditText
+                            android:id="@+id/experienceHideLayoutEx2NameofExpe"
+                            android:hint="Experience (Training,Internship,etc)"
+                            android:backgroundTint="@color/mainColor"
+                            android:textCursorDrawable="@drawable/cursor_color"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"/>
+
+                        <EditText
+                            android:id="@+id/experienceHideLayoutEx2OrganizationName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:hint="Organization Name"
+                            android:backgroundTint="@color/mainColor"
+                            android:textCursorDrawable="@drawable/cursor_color"
+                            />
+                        <EditText
+                            android:id="@+id/experienceHideLayoutEx2Achievement"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:hint="Achievement/Tasks"
+                            android:backgroundTint="@color/mainColor"
+                            android:textCursorDrawable="@drawable/cursor_color"
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/experienceHideLayoutEx3"
+                        android:layout_below="@id/experienceHideLayoutEx2"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/hidelayoutback"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:text="3rd Experience"
+                            android:layout_margin="5dp"/>
+
+                        <EditText
+                            android:id="@+id/experienceHideLayoutEx3NameofExpe"
+                            android:hint="Experience (Training,Internship,etc)"
+                            android:backgroundTint="@color/mainColor"
+                            android:textCursorDrawable="@drawable/cursor_color"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"/>
+
+                        <EditText
+                            android:id="@+id/experienceHideLayoutEx3OrganizationName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:hint="Organization Name"
+                            android:backgroundTint="@color/mainColor"
+                            android:textCursorDrawable="@drawable/cursor_color"
+                            />
+                        <EditText
+                            android:id="@+id/experienceHideLayoutEx3Achievement"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:hint="Achievement/Tasks"
+                            android:backgroundTint="@color/mainColor"
+                            android:textCursorDrawable="@drawable/cursor_color"
+                            />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

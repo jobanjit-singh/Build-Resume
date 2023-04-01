@@ -21,6 +21,9 @@ class DetailActivity : AppCompatActivity() {
     lateinit var educationbaseCardView:CardView
     lateinit var educationarrowButton:ImageButton
     lateinit var educationhidelayout:RelativeLayout
+    lateinit var experiencebaseCardView:CardView
+    lateinit var experiencearrowButton:ImageButton
+    lateinit var experiencehidelayout:RelativeLayout
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +35,10 @@ class DetailActivity : AppCompatActivity() {
         educationbaseCardView = findViewById(R.id.EducationCardView)
         educationarrowButton = findViewById(R.id.educationArrowButton)
         educationhidelayout = findViewById(R.id.educationHideLayout)
+
+        experiencebaseCardView = findViewById(R.id.experienceCardView)
+        experiencearrowButton = findViewById(R.id.experienceArrowButton)
+        experiencehidelayout = findViewById(R.id.experienceHideLayout)
 
         personalarrowButton.setOnClickListener(View.OnClickListener {
             if(personalhidelayout.visibility == View.VISIBLE){
@@ -54,6 +61,19 @@ class DetailActivity : AppCompatActivity() {
                 TransitionManager.beginDelayedTransition(educationbaseCardView,AutoTransition())
                 educationarrowButton.setImageResource(R.drawable.expand_more)
                 educationhidelayout.visibility = View.GONE
+            }
+        })
+
+        experiencearrowButton.setOnClickListener(View.OnClickListener {
+            if(experiencehidelayout.visibility == View.GONE){
+                TransitionManager.beginDelayedTransition(experiencebaseCardView,AutoTransition())
+                experiencearrowButton.setImageResource(R.drawable.expand_less)
+                experiencehidelayout.visibility = View.VISIBLE
+            }
+            else{
+                TransitionManager.beginDelayedTransition(experiencebaseCardView,AutoTransition())
+                experiencearrowButton.setImageResource(R.drawable.expand_more)
+                experiencehidelayout.visibility = View.GONE
             }
         })
     }
