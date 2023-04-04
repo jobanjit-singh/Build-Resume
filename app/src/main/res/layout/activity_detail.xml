@@ -539,6 +539,78 @@
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/skillBaseCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintTop_toBottomOf="@id/experienceCardView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:id="@+id/skillShowLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Skills"
+                        android:textSize="15sp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"/>
+                    <ImageButton
+                        android:id="@+id/skillShowLayoutArrowButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/expand_more"
+                        android:backgroundTintMode="screen"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/skillHideLayout"
+                    android:visibility="gone"
+                    android:layout_below="@id/skillShowLayout"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/hidelayoutback"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:id="@+id/skillHideLayoutEditTextLayout"
+                        android:animateLayoutChanges="true"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_height="wrap_content"/>
+                    <Button
+                        android:id="@+id/skillHideLayoutAddEditTextBtn"
+                        android:layout_below="@id/skillHideLayoutEditTextLayout"
+                        android:text="+"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/addbuttonback"
+                        android:layout_centerVertical="true"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"/>
+                    <Button
+                        android:id="@+id/skillHideLayoutSubtractEditTextBtn"
+                        android:layout_below="@id/skillHideLayoutEditTextLayout"
+                        android:text="-"
+                        android:layout_margin="5dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/addbuttonback"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
